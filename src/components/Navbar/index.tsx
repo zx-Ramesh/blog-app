@@ -23,7 +23,7 @@ const Navbar = () => {
           );
         })}
       </ul>
-      <input type="text" className="border border-teal-500 bg-red-600"  />
+      <input type="text" className="bg-[#F4F4F5] py-2 px-3 outline-none" placeholder="Search"  />
       <DarkModeSwitch />
     </div>
   );
