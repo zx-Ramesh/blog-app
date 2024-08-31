@@ -1,7 +1,8 @@
 import React from "react";
-import LogSvg from "../UI/Icons";
+
 import Link from "next/link";
 import DarkModeSwitch from "../UI/DarkModeSwitch";
+import { LogoSvg } from "../UI/Icons";
 
 const Navbar = () => {
   const listOfMenu = [
@@ -13,12 +14,12 @@ const Navbar = () => {
   ];
   return (
     <div className="flex justify-between items-center py-4">
-      <LogSvg />
+      <LogoSvg className="dark:fill-white" />
       <ul className="flex justify-between w-2/5 items-center">
         {listOfMenu.map((eachMenu, i) => {
           return (
             <Link href={eachMenu.route} key={i}>
-              <li className="cursor-pointer">{eachMenu.text}</li>
+              <li className="font-normal text-base cursor-pointer text-Primary dark:text-dark-1">{eachMenu.text}</li>
             </Link>
           );
         })}

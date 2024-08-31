@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "../HeroSection";
 import LatestPost from "../LatestPost";
 
-const LandingPage = () => {
+const   LandingPage = () => {
   return (
     <>
       <HeroSection />

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -27,7 +28,7 @@ const config: Config = {
           5:"#141624",
           6:"#BABABF"
 
-        },
+        }
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
