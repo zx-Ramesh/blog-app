@@ -8,7 +8,7 @@ const HeroSection = () => {
         alt="image here"
         className="w-full h-4/5 object-fill rounded-lg"
       />
-      <div className="h-44 w-80 rounded-lg border-[1px]  border-gray-400  bg-white p-4 absolute -bottom-10 left-10">
+      <div className="h-44 w-80  rounded-lg border-[1px]  border-gray-400  bg-white dark:bg-dark dark:border-slate-700 p-4 absolute -bottom-10 left-10">
         <div className="">
           <button className="rounded-lg text-white bg-blue-700 py-1 px-2 mb-2 text-sm font-medium">
             Technology

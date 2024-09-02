@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import React from "react";
 import BlogCard from "../BlogCard";
+import { Blog } from "../../../typings";
 
 const 
 LatestPost = async() => {
@@ -9,12 +10,13 @@ LatestPost = async() => {
   title,
   image,
   author,
-  "slug":slug.content,
+  "slug":slug.current,
   author->{name,image},
+  content,
 }`
 
 const blogs:Blog[] = await client.fetch(query);
-console.log(blogs)
+console.log("nikhilwa",blogs)
   return (
     <div className="flex min-h-screen flex-col mt-16">
       <h1 className="font-bold text-xl">Latest Blog</h1>
