@@ -2,8 +2,10 @@ import React from "react";
 import Link from "next/link";
 import DarkModeSwitch from "../UI/DarkModeSwitch";
 import { LogoSvg } from "../UI/Icons";
+import { client } from "@/sanity/lib/client";
+import SearchComponent from "../Search";
 
-const Navbar = () => {
+const Navbar = async() => {
   const listOfMenu = [
     { text: "Home", route: "/" },
     { text: "Blog", route: "/" },
@@ -11,6 +13,23 @@ const Navbar = () => {
     { text: "Pages", route: "/" },
     {text:"Contact", route:"/"}
   ];
+
+  const query = `*[_type == "blog"]{
+  title,
+  tag,
+  image,
+  "slug": slug.current,
+  _createdAt,
+  "author": author->{
+    _id,
+    name,
+    image
+  }
+}`;
+
+
+  const search = await client.fetch(query)
+  // console.log("Navbaar:",search)
   return (
     <div className="flex justify-between items-center py-4">
       <LogoSvg className="dark:fill-white" />
@@ -23,7 +42,8 @@ const Navbar = () => {
           );
         })}
       </ul>
-      <input type="text" className="bg-[#F4F4F5] py-2 px-3 outline-none" placeholder="Search"  />
+      {/* <input type="text" className="bg-[#F4F4F5] py-2 px-3 outline-none" placeholder="Search"  /> */}
+      <SearchComponent data={search} />
       <DarkModeSwitch />
     </div>
   );

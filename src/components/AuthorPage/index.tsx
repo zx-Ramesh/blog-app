@@ -10,7 +10,7 @@ export type authorData = {
 };
 
 const AuthorPage = ({ authorDetails }: authorData) => {
-  console.log("authorPageDetails", authorDetails);
+  // console.log("authorPageDetails", authorDetails);
 
   return (
     <>
