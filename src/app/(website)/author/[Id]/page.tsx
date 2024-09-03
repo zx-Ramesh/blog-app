@@ -1,9 +1,8 @@
-import AuthorPage from "@/components/AuthorPage";
+import AuthorPage, { authorData } from "@/components/AuthorPage";
 import { client } from "@/sanity/lib/client";
 import React, { Suspense } from "react";
-// import { client } from "../../../../../sanity/lib/client";
-// import AuthorPage from "@/components/Author Page";
-// import { fetchAuthorDetails } from "@/components/Utils/queries";
+import { AllAuthorDetails } from "../../../../../typings";
+
 
 export default async function Page({ params }: { params: { id: string } }) {
   // console.log(params.id);
@@ -12,6 +11,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     return `*[_type == "author" && _id == "${id}"] {
       image,
       name,
+      _id,
       bio,
       designation, 
       "blogs": *[_type == "blog" && references(^._id)] {
@@ -24,19 +24,20 @@ export default async function Page({ params }: { params: { id: string } }) {
           image,
           name,
           bio,
+          _id,
           designation
         }[0]
       }
     }[0]`;
   };
-  const authorDetail = await client.fetch(query(params.id));
+  const authorDetail:AllAuthorDetails = await client.fetch(query(params.id));
 
-  console.log("authorDetails",authorDetail);
+  // console.log("authorDetails111111111",authorDetail);
 
   return (
     <>
       <Suspense fallback={<>Loading</>}>
-        <AuthorPage />
+        <AuthorPage authorDetails={authorDetail}/>
       </Suspense>
     </>
   );

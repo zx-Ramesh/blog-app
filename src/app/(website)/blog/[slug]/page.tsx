@@ -6,7 +6,7 @@ export default async function Page({ params:{slug} }: { params: { slug: string }
     const query = `*[_type=="blog" && slug.current =="${slug}"]{
         tag,
         title,
-        author->{name,image,bio},
+        author->{name,image,bio,_id},
         content,
         _createdAt,
         image,

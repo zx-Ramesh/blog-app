@@ -3,8 +3,7 @@ import React from "react";
 import BlogCard from "../BlogCard";
 import { Blog } from "../../../typings";
 
-const 
-LatestPost = async() => {
+const LatestPost = async() => {
   const query = `*[_type=='blog'] |order(_createdAt desc) {
   tag,
   title,
@@ -13,10 +12,11 @@ LatestPost = async() => {
   "slug":slug.current,
   author->{name,image},
   content,
+  _createdAt,
 }`
 
 const blogs:Blog[] = await client.fetch(query);
-console.log("nikhilwa",blogs)
+// console.log("AllBlogs",blogs)
   return (
     <div className="flex min-h-screen flex-col mt-16">
       <h1 className="font-bold text-xl">Latest Blog</h1>

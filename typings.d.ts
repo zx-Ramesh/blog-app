@@ -3,7 +3,7 @@ export type Blog={
    image:any,
    title:string,
    slug:string,
-   author?:any,
+   author?:Author,
    _createdAt:any,
    content?:any;
 }
@@ -27,7 +27,7 @@ export type Blog={
    image: any;
    bio: string;
    designation: string;
-   blogs: CardData[];
+   blogs: Blog[];
    name: string;
    _id: string;
  };

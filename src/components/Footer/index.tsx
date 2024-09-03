@@ -44,7 +44,7 @@ const Footer = () => {
             <li className="mb-2">Sports</li>
           </ul>
         </div>
-        <div className="w-3/12 bg-white dark:bg-dark-4 p-5 text-center rounded-lg">
+        <div className="w-3/12 bg-white dark:bg-dark-4 p-5 rounded-lg flex flex-col items-center">
           <h1 className="font-semibold text-lg pb-1">White Newsletter</h1>
           <p className="whitespace-nowrap text-sm text-gray-400">
             Get blog articles and offers via mail

@@ -5,7 +5,7 @@ import { MdLightMode } from "react-icons/md";
 import { useTheme } from "next-themes";
 const DarkMode = () => {
   const { theme, setTheme, systemTheme,themes } = useTheme();
-  console.log("ramshwa",systemTheme );
+  // console.log("ramshwa",systemTheme );
   
 
 

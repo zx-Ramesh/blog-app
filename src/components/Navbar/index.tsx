@@ -1,5 +1,4 @@
 import React from "react";
-
 import Link from "next/link";
 import DarkModeSwitch from "../UI/DarkModeSwitch";
 import { LogoSvg } from "../UI/Icons";
@@ -9,8 +8,8 @@ const Navbar = () => {
     { text: "Home", route: "/" },
     { text: "Blog", route: "/" },
     { text: "Single Post", route: "/" },
-    { text: "pages", route: "/" },
-    { text: "Home", route: "/" },
+    { text: "Pages", route: "/" },
+    {text:"Contact", route:"/"}
   ];
   return (
     <div className="flex justify-between items-center py-4">

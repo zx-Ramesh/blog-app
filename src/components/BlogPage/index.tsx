@@ -4,13 +4,14 @@ import { Blog } from '../../../typings'
 import { urlForImage } from '@/sanity/lib/image'
 import { PortableText } from "@portabletext/react";
 import { dateConvert } from '../../../constant';
+import Link from 'next/link';
 
 type blogdetailProps = {
   blogdetails: Blog
 }
 
 const BlogPage = ({blogdetails}:blogdetailProps) => {
-  console.log("DetailsFetch:",blogdetails)
+  // console.log("DetailsFetch:",blogdetails)
   return (
     // <h1>hi</h1>
     <div className="w-4/6 m-auto mt-10 ">
@@ -30,10 +31,10 @@ const BlogPage = ({blogdetails}:blogdetailProps) => {
             alt=""
           />
 
-            <h1 className="text-xs pl-3 hover:underline">
+          <Link  href={`/author/${blogdetails?.author?._id}`}>  <h1 className="text-xs pl-3 hover:underline" >
               {blogdetails.author?.name}
             </h1>
-
+            </Link>
         </div>
         <p className="text-[10px] font-bold">
           {dateConvert(blogdetails._createdAt)}
